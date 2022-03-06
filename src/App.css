@@ -1,0 +1,12 @@
+.App {
+  margin: 50px auto 0 auto;
+  text-align: center;
+}
+
+.App-button {
+  cursor: pointer;
+}
+
+button {
+  font-size: calc(10px + 2vmin);
+}
