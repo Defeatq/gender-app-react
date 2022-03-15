@@ -13,15 +13,20 @@ class App extends React.Component {
       gender: '',
     };
 
+    this.handleName = this.handleName.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
+  }
+
+  handleName(event) {
+    this.setState({
+      firstName: event.target.value,
+    });
   }
 
   onSubmit(event) {
     event.preventDefault();
 
-    const inputValue = event.target.querySelector('input').value;
-    
-    requestForGender(inputValue)
+    requestForGender(this.state.firstName)
       .then(nameData => {
         this.setState({
           firstName: nameData.name,
@@ -36,7 +41,7 @@ class App extends React.Component {
     return (
       <div className='App'>
         <form onSubmit={this.onSubmit}>
-          <Input />
+          <Input handleChange={this.handleName} />
           <Button />
         </form>
   

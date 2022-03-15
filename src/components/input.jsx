@@ -1,6 +1,6 @@
-function Input() {
+function Input(props) {
   return (
-    <input type='text' placeholder='Type your name' />
+    <input type='text' placeholder='Type your name' onChange={props.handleChange} />
   )
 }
 
